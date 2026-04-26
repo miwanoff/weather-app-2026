@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./assets/images/logo.png";
 
 const api = {
-  key: "45320eb98dd32e71513cf76378fc81e7",
+  key: "API openweathermap",
   base: "http://api.openweathermap.org/data/2.5/",
   icon: "https://openweathermap.org/img/w",
 };
