@@ -1,5 +1,6 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "./assets/images/logo.png";
 
 const api = {
   key: "45320eb98dd32e71513cf76378fc81e7",
@@ -7,11 +8,25 @@ const api = {
   icon: "https://openweathermap.org/img/w",
 };
 
+function Header(props) {
+  return (
+    <div className={props.className}>
+      <Image src={logo} />
+      <h1>Weather</h1>
+    </div>
+  );
+}
+
+function Image(props) {
+  return <img src={props.src} alt="logo" style={{ width: "100px" }} />;
+}
+
 function App() {
   return (
    <div className="container">
+    <Header className="jumbotron alert alert-warning" />
     <div className="row">
-      <div className="search-panel col-sm-12 col-md-4 my-3">
+      <div className="search-panel col-sm-12 col-md-4 my-3">      
         <input
           type="text"
           className="form-control search-input"
@@ -23,6 +38,5 @@ function App() {
 
   );
 }
-
 
 export default App;
