@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import moment from "moment";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./assets/images/logo.png";
@@ -22,20 +24,27 @@ function Image(props) {
 }
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
+
   return (
-   <div className="container">
-    <Header className="jumbotron alert alert-warning" />
-    <div className="row">
-      <div className="search-panel col-sm-12 col-md-4 my-3">      
-        <input
-          type="text"
-          className="form-control search-input"
-          placeholder="Search"
-        />
+    <div className="container">
+      <Header className="jumbotron alert alert-warning" />
+      <div className="row">
+        <div className="row">
+          <div className="col-md-4 col-sm-12 my-3">
+            Today: {moment().format("dddd")} {moment().format("LL")}
+          </div>
+        </div>
+        <div className="search-panel col-sm-12 col-md-4 my-3">
+          <input
+            type="text"
+            className="form-control search-input"
+            placeholder="Search"
+          />
+        </div>
       </div>
     </div>
-  </div>
-
   );
 }
 
